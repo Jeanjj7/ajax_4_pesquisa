@@ -17,11 +17,12 @@
 
         <button id="bntPesquisar">Pesquisa</button>
     </div>
+    
     <div id="resultado"></div>
     <script>
         $("#bntPesquisar").click(function () {
            var codigo_capturado = $("#codigo_produto").val();
-           $("#resultado").html("<img src='carregando.gif'>");
+           $("#resultado").html("<img src='carregando.gif'>  <br> Pesquisando ...");
            $.ajax({
             url: "consultar.php",
             method: "POST",
