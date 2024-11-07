@@ -10,7 +10,7 @@ body{
     
 }
 
-#painelRastreio{
+#painelRastreio, #conteiner{
     background-image: linear-gradient(to right, #FFA07A, #FFC107);
     padding-top: 100px;
     padding-bottom: 100px;

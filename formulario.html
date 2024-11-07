@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="logomarca.jpg" id="logomarca">
+
+    <h1>Cadastrar Movimentação</h1>
+<div id="conteiner">
+    
+        <label>Código de Rastreio:</label>
+        <input type="text" id="codRastreio" ><br><br>
+        
+        <label>Tipo de Movimentação:</label>
+        <select id="tipoMovimentacao" >
+            <option value="">Selecione</option>
+            <option value="Postado">Postado</option>
+            <option value="Em trânsito">Em trânsito</option>
+            <option value="Saiu para entrega">Saiu para entrega</option>
+            <option value="Entregue">Entregue</option>
+        </select><br><br>        
+
+        <label>Origem:</label>
+        <select id="origem" >
+            <option value="">Selecione</option>
+            <option value="São Paulo/SP">São Paulo/SP</option>
+            <option value="Rio de Janeiro/RJ">Rio de Janeiro/RJ</option>
+            <option value="Recife/PE">Recife/PE</option>
+
+        </select><br><br>
+
+        <label>Destino:</label>
+        <select id="destino">
+            <option value="">Selecione</option>
+            <option value="São Paulo/SP">São Paulo/SP</option>
+            <option value="Rio de Janeiro/RJ">Rio de Janeiro/RJ</option>
+            <option value="Recife/PE">Recife/PE</option>
+
+        </select><br><br>
+
+        <label>Data e Hora da Movimentação:</label>
+        <input type="datetime-local" id="dataHoraMovi" ><br><br>
+
+
+
+        <button id="bntCadratra">Cadastrar</button>
+    
+</div>
+
+
+    <script>
+        $("#bntCadratra").click(function(){
+            var codRastreio_capturada = $("#codRastreio").val();
+            var tipoMov_capturada = $("#tipoMovimentacao").val();
+            var origem_capturada = $("#origem").val();
+            var destino_capturada = $("#destino").val();
+            var dataHora_capturada = $("#dataHoraMovi").val();
+            $.ajax({
+                url: "catrastar.php",
+                type: "POST",
+                data: {cod_rastreio: codRastreio_capturada,
+                    tipo_movimentacao: tipoMov_capturada,
+                    origem: origem_capturada, 
+                    destino: destino_capturada,
+                    data_hora_movi: dataHora_capturada},
+                    success: function(resposta){
+                        alert(resposta);
+                        alert("Cadratro enviado com sucesso");
+                    },
+                    error: function(){
+                        alert("Erro ao Cadratra!!");
+                    }
+
+            });
+        });
+    
+    </script>
+</body>
+</html>
