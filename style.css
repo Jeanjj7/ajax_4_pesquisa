@@ -66,3 +66,28 @@ body{
 }
 
 /**/
+#conteiner input{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 10px;
+    margin-right: 100px;
+}
+#conteiner select{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 10px;
+    margin-right: 100px;
+}
+#bntCadratra{
+    width: 200px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    font-size: 10px;
+    margin-right: 100px;
+}
